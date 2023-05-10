@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-golftracker-dev-125843-authRole",
+      "UnauthRoleArn": "arn:aws:iam::836557714765:role/amplify-golftracker-dev-125843-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::836557714765:role/amplify-golftracker-dev-125843-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-golftracker-dev-125843-deployment",
+      "UnauthRoleName": "amplify-golftracker-dev-125843-unauthRole",
+      "StackName": "amplify-golftracker-dev-125843",
+      "StackId": "arn:aws:cloudformation:us-east-1:836557714765:stack/amplify-golftracker-dev-125843/ebf3f070-ef53-11ed-ab18-0a1e1153cc2d",
+      "AmplifyAppId": "dwh6p64kg0vzi"
+    },
+    "categories": {
+      "api": {
+        "golftracker": {}
+      }
+    }
+  }
+}

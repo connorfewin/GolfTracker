@@ -1,12 +1,13 @@
 
 import './App.css';
-import Scorecard from './components/Scorecard';
+import NewCourse from './components/NewCourse';
+// import Scorecard from './components/NewScorecard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Scorecard />
+        <NewCourse />
       </header>
     </div>
   );

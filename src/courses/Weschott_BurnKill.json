@@ -1,13 +1,14 @@
-{   "name": "Burn Kill",
-    "holes": [
-      {"number": 1, "par": 4, "handicap": 4, "yardage": 386, "score": null},
-      {"number": 2, "par": 5, "handicap": 1, "yardage": 533, "score": null},
-      {"number": 3, "par": 4, "handicap": 8, "yardage": 321, "score": null},
-      {"number": 4, "par": 5, "handicap": 5, "yardage": 482, "score": null},
-      {"number": 5, "par": 4, "handicap": 3, "yardage": 389, "score": null},
-      {"number": 6, "par": 3, "handicap": 7, "yardage": 182, "score": null},
-      {"number": 7, "par": 4, "handicap": 6, "yardage": 344, "score": null},
-      {"number": 8, "par": 3, "handicap": 9, "yardage": 148, "score": null},
-      {"number": 9, "par": 4, "handicap": 2, "yardage": 374, "score": null}
-    ]
+{
+"name": "Burn Kill",
+"holes": [
+{"number": 1, "par": 4, "handicap": 4, "yardage": 386},
+{"number": 2, "par": 5, "handicap": 1, "yardage": 533},
+{"number": 3, "par": 4, "handicap": 8, "yardage": 321},
+{"number": 4, "par": 5, "handicap": 5, "yardage": 482},
+{"number": 5, "par": 4, "handicap": 3, "yardage": 389},
+{"number": 6, "par": 3, "handicap": 7, "yardage": 182},
+{"number": 7, "par": 4, "handicap": 6, "yardage": 344},
+{"number": 8, "par": 3, "handicap": 9, "yardage": 148},
+{"number": 9, "par": 4, "handicap": 2, "yardage": 374}
+]
 }

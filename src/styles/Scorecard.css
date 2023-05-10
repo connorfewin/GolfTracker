@@ -51,10 +51,16 @@ table {
     -moz-appearance: textfield;
   }
   
+  .course-info {
+    padding-bottom: 20px;
+  }
   .scorecard-container {
     max-width: 800px;
     margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+  
   
   .scorecard-container h2 {
     margin-bottom: 1rem;

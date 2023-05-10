@@ -27,7 +27,7 @@ const Scorecard = () => {
               {course.holes.map((hole) => (
                 <th key={`yardage-${hole.number}`}>{hole.yardage}</th>
               ))}
-              <th></th>
+              <th>{course.holes.reduce((acc, hole) => acc + hole.yardage, 0)}</th>
             </tr>
             <tr>
               <th>Hole</th>

@@ -1,0 +1,16 @@
+{
+    "date": "05/07/2023",
+    "course": "Oak Forest",
+    "scores": [
+      {"hole": 1, "score": null},
+      {"hole": 2, "score": null},
+      {"hole": 3, "score": null},
+      {"hole": 4, "score": null},
+      {"hole": 5, "score": null},
+      {"hole": 6, "score": null},
+      {"hole": 7, "score": null},
+      {"hole": 8, "score": null},
+      {"hole": 9, "score": null}
+    ]
+  }
+  
