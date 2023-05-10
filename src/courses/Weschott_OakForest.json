@@ -1,0 +1,14 @@
+{   "name": "Oak Forest",
+    "holes": [
+      {"number": 1, "par": 4, "handicap": 5, "yardage": 359, "score": null},
+      {"number": 2, "par": 4, "handicap": 6, "yardage": 338, "score": null},
+      {"number": 3, "par": 3, "handicap": 8, "yardage": 155, "score": null},
+      {"number": 4, "par": 5, "handicap": 4, "yardage": 472, "score": null},
+      {"number": 5, "par": 4, "handicap": 2, "yardage": 413, "score": null},
+      {"number": 6, "par": 4, "handicap": 9, "yardage": 321, "score": null},
+      {"number": 7, "par": 5, "handicap": 1, "yardage": 544, "score": null},
+      {"number": 8, "par": 3, "handicap": 7, "yardage": 169, "score": null},
+      {"number": 9, "par": 4, "handicap": 3, "yardage": 385, "score": null}
+    ]
+  }
+  

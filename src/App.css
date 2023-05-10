@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+/* CSS */
+.score-input {
+  width: 35px;
+  padding: 5px;
+  text-align: center;
+}
