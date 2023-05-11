@@ -1,9 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import NewCourseInfo from "./NewCourseInfo";
 import "../styles/Scorecard.css";
+import "../styles/BackButton.css";
 import { createGolfCourse, fetchAllCourses } from "../api";
 
 const NewCourse = () => {
-  const [courseName, setCourseName] = useState("Oak Forest");
+  const navigate = useNavigate();
+  const [courseName, setCourseName] = useState("");
   const [courseNameError, setCourseNameError] = useState(false);
   const [holeCount, setHoleCount] = useState(9);
   const [holes, setHoles] = useState([
@@ -79,25 +83,27 @@ const NewCourse = () => {
     }
   };
 
+  const handleClick = () => {
+    navigate(-1);
+  }
   return (
     <div>
       <h2>Create a New Golf Course</h2>
-      <div className="course-info">
-        <label>Course Name:</label>
-        <input
-          type="text"
-          value={courseName}
-          onChange={handleNameChange}
-          required
-        />
-        <label>Hole Count:</label>
-        <select value={holeCount} onChange={handleHoleCountChange}>
-          <option value={9}>9 Holes</option>
-          <option value={18}>18 Holes</option>
-        </select>
-      </div>
+      <button className="back-button" onClick={handleClick}>
+        <i className="fa fa-arrow-left"></i>
+        Go back
+      </button>
+      
+      <NewCourseInfo
+        courseName={courseName}
+        handleNameChange={handleNameChange}
+        holeCount={holeCount}
+        handleHoleCountChange={handleHoleCountChange}
+      />
       {courseNameError && (
-        <p style={{ color: "red" }}>Course name already exists</p>
+        <p style={{ textAlign: "center", color: "red" }}>
+          Course name already exists
+        </p>
       )}
       <table>
         <thead>
@@ -138,7 +144,7 @@ const NewCourse = () => {
             ))}
             <th>{holes.reduce((acc, hole) => acc + hole.par, 0)}</th>
           </tr>
-          <tr>
+          <tr className="handicap">
             <th>Handicap</th>
             {holes.map((hole) => (
               <th key={`handicap-${hole.number}`}>
