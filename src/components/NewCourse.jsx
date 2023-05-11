@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Scorecard.css";
-import { createGolfCourse,fetchAllCourses } from "../api";
+import { createGolfCourse, fetchAllCourses } from "../api";
 
 const NewCourse = () => {
   const [courseName, setCourseName] = useState("Oak Forest");
@@ -64,19 +64,20 @@ const NewCourse = () => {
   };
 
   const handleSubmit = () => {
-    const hasNullValues = holes.some(hole => hole.par === null || hole.handicap === null || hole.yardage === null);
-    
+    const hasNullValues = holes.some(
+      (hole) =>
+        hole.par === null || hole.handicap === null || hole.yardage === null
+    );
+
     if (hasNullValues) {
-      console.log('Error: Null values in holes');
+      console.log("Error: Null values in holes");
     } else if (courseNameError) {
-      console.log('Error: Course name is invalid');
+      console.log("Error: Course name is invalid");
     } else {
-      console.log('Create Course');
+      console.log("Create Course");
       createGolfCourse(courseName, holes);
     }
   };
-  
-  
 
   return (
     <div>
@@ -95,7 +96,9 @@ const NewCourse = () => {
           <option value={18}>18 Holes</option>
         </select>
       </div>
-      {courseNameError && <p style={{ color: "red" }}>Course name already exists</p>}
+      {courseNameError && (
+        <p style={{ color: "red" }}>Course name already exists</p>
+      )}
       <table>
         <thead>
           <tr>
@@ -152,7 +155,9 @@ const NewCourse = () => {
           </tr>
         </thead>
       </table>
-      <button className="submit-button" onClick={handleSubmit}>Submit Score</button>
+      <button className="submit-button" onClick={handleSubmit}>
+        Submit Score
+      </button>
     </div>
   );
 };

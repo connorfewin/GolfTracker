@@ -1,101 +1,140 @@
 table {
-    border-collapse: collapse;
-    font-size: 14px;
-    margin: 0 auto;
-  }
-  
-  th {
-    border: 1px solid #ddd;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  thead tr:nth-child(1) th {
-    background-color: #f5f5f5;
-    color: #4a5568;
-  }
-  
-  thead tr:nth-child(2) th {
-    background-color: #005806;
-    color: #fff;
-  }
-  
-  thead tr:nth-child(3) th {
-    background-color: #998200;
-    color: #ffffff;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f5f5f5;
-  }
-  
-  input[type="number"] {
-    -moz-appearance: textfield;
-    -webkit-appearance: textfield;
-    appearance: textfield;
-  }
-  
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-  }
-  
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
-  
-  .course-info {
-    padding-bottom: 20px;
-  }
-  .scorecard-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  
-  .scorecard-container h2 {
-    margin-bottom: 1rem;
-    color: #4a5568;
-  }
-  
-  .scorecard-container table {
-    margin-bottom: 1rem;
-  }
-  
-  .scorecard-container tbody tr td:first-child {
-    font-weight: bold;
-    background-color: #f5f5f5;
-    color: #4a5568;
-  }
-  
-  .scorecard-container tbody tr:last-child {
-    background-color: #f5f5f5;
-    font-weight: bold;
-  }
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 0 auto;
+}
 
-  .submit-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #1a9641;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #1e7f34;
-  }
+th {
+  border: 1px solid #ddd;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+thead tr:nth-child(1) th {
+  background-color: #f5f5f5;
+  color: #4a5568;
+}
+
+thead tr:nth-child(2) th {
+  background-color: #005806;
+  color: #fff;
+}
+
+thead tr:nth-child(3) th {
+  background-color: #998200;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.course-info label,
+.course-info input,
+.course-info select {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.course-info label {
+  width: 120px;
+  text-align: right;
+  font-size: 16px;
+}
+
+.course-info select {
+  font-size: 16px;
+  width: 120px;
+  margin-right: 10px;
+}
+
+.course-info input {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.course-info input:focus,
+.course-info select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25);
+}
+
+.scorecard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.scorecard-container h2 {
+  margin-bottom: 1rem;
+  color: #4a5568;
+}
+
+.scorecard-container table {
+  margin-bottom: 1rem;
+}
+
+.scorecard-container tbody tr td:first-child {
+  font-weight: bold;
+  background-color: #f5f5f5;
+  color: #4a5568;
+}
+
+.scorecard-container tbody tr:last-child {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.submit-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #1a9641;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #1e7f34;
+}
