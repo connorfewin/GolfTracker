@@ -1,0 +1,19 @@
+  .date-picker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .date-picker label {
+    margin-right: 0.5rem;
+    color: #ccc
+  }
+  
+  .date-picker input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
