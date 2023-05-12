@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/SelectStats.css';
 
 export default function SelectStatsRow({ type, course, stats, handleChange }) {
   let label, reduceFunction;
