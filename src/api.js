@@ -26,8 +26,9 @@ const fetchAllCourses = async () => {
         );
         course.holes = holeDetails.sort((a, b) => a.number - b.number);
       }
-  
+      console.log("Successfully fetched courses: ", courses);
       return courses;
+      
     } catch (error) {
       console.log("Error in fetchAllCourses: " + error);
       return [];

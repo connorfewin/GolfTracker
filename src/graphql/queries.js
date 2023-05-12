@@ -100,7 +100,7 @@ export const getStats = /* GraphQL */ `
       id
       holeID
       score
-      puts
+      putts
       playableSecond
       greensInReg
       createdAt
@@ -119,7 +119,7 @@ export const listStats = /* GraphQL */ `
         id
         holeID
         score
-        puts
+        putts
         playableSecond
         greensInReg
         createdAt

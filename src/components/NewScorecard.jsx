@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CourseHeader from "./CourseHeader";
-import ScoreRow from "./InputScoreRow";
+import InputStatsRow from "./InputStatsRow";
+import SelectStatsRow from "./SelectStatsRow";
 import CourseSelector from "./CourseSelector";
 import { fetchAllCourses } from "../api";
 import "../styles/Date.css";
@@ -11,18 +12,7 @@ const Scorecard = () => {
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [stats, setStats] = useState([
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-    { roundId: null, holeId: null, score: null, puts: null, playable2nd: null, greenInReg: null },
-  ]);
-  
+  const [stats, setStats] = useState([]);
 
   useEffect(() => {
     const getCoursesAndSetStats = async () => {
@@ -31,11 +21,11 @@ const Scorecard = () => {
       setCourses(response);
       setSelectedCourse(response[0]);
 
-      // wait for the response from fetchAllCourses before setting the stats
+      // Create the stats array based on the response from fetchAllCourses
       const statsWithHoleIds = response[0].holes.map((hole) => ({
         holeId: hole.id,
         score: null,
-        puts: null,
+        putts: null,
         playable2nd: null,
         greenInReg: null,
       }));
@@ -52,16 +42,21 @@ const Scorecard = () => {
     setSelectedCourse(selected);
   };
 
-  const handleScoreChange = (event, holeNumber) => {
-    const newScore = parseInt(event.target.value);
-    setSelectedCourse((prevCourse) => {
-      const updatedHoles = prevCourse.holes.map((hole) => {
-        if (hole.number === holeNumber) {
-          return { ...hole, score: newScore };
+  const handleChange = (event, holeId, statName) => {
+    const newValue =
+      statName === "playable2nd" || statName === "greensInReg"
+        ? event.target.checked
+        : parseInt(event.target.value);
+    console.log("NEW VALUE", newValue);
+    setStats((prevStats) => {
+      const updatedStats = prevStats.map((stat) => {
+        if (stat.holeId === holeId) {
+          return { ...stat, [statName]: newValue };
         }
-        return hole;
+        return stat;
       });
-      return { ...prevCourse, holes: updatedHoles };
+      console.log("Updated Stats: ", updatedStats);
+      return updatedStats;
     });
   };
 
@@ -94,9 +89,29 @@ const Scorecard = () => {
             </div>
             <table>
               <CourseHeader course={selectedCourse} />
-              <ScoreRow
+              <InputStatsRow
+                type="score"
                 course={selectedCourse}
-                handleInputChange={handleScoreChange}
+                stats={stats}
+                handleChange={handleChange}
+              />
+              <InputStatsRow
+                type="putts"
+                course={selectedCourse}
+                stats={stats}
+                handleChange={handleChange}
+              />
+              <SelectStatsRow
+                type="playable2nd"
+                course={selectedCourse}
+                stats={stats}
+                handleChange={handleChange}
+              />
+              <SelectStatsRow
+                type="greensInReg"
+                course={selectedCourse}
+                stats={stats}
+                handleChange={handleChange}
               />
             </table>
             <button className="submit-button">Submit Score</button>

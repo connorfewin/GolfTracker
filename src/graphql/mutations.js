@@ -145,7 +145,7 @@ export const createStats = /* GraphQL */ `
       id
       holeID
       score
-      puts
+      putts
       playableSecond
       greensInReg
       createdAt
@@ -162,7 +162,7 @@ export const updateStats = /* GraphQL */ `
       id
       holeID
       score
-      puts
+      putts
       playableSecond
       greensInReg
       createdAt
@@ -179,7 +179,7 @@ export const deleteStats = /* GraphQL */ `
       id
       holeID
       score
-      puts
+      putts
       playableSecond
       greensInReg
       createdAt

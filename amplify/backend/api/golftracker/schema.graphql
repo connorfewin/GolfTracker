@@ -27,7 +27,7 @@ type Stats @model {
   id: ID!
   holeID: String!
   score: Int
-  puts: Int
+  putts: Int
   playableSecond: Boolean
   greensInReg: Boolean
 }
