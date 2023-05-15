@@ -20,7 +20,7 @@ const Scorecard = () => {
       console.log("Courses response:", response);
       setCourses(response);
       setSelectedCourse(response[0]);
-
+      console.log(selectedCourse);
       // Create the stats array based on the response from fetchAllCourses
       const statsWithHoleIds = response[0].holes.map((hole) => ({
         holeId: hole.id,

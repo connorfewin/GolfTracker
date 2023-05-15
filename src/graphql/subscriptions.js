@@ -41,7 +41,9 @@ export const onCreateHole = /* GraphQL */ `
       number
       par
       handicap
-      yardage
+      white
+      blue
+      black
       createdAt
       updatedAt
     }
@@ -54,7 +56,9 @@ export const onUpdateHole = /* GraphQL */ `
       number
       par
       handicap
-      yardage
+      white
+      blue
+      black
       createdAt
       updatedAt
     }
@@ -67,7 +71,9 @@ export const onDeleteHole = /* GraphQL */ `
       number
       par
       handicap
-      yardage
+      white
+      blue
+      black
       createdAt
       updatedAt
     }

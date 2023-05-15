@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NewCourseInfo from "./NewCourseInfo";
-import "../styles/Scorecard.css";
+import "../styles/NewCourse.css";
 import "../styles/BackButton.css";
 import { createGolfCourse, fetchAllCourses } from "../api";
 
@@ -11,16 +11,17 @@ const NewCourse = () => {
   const [courseNameError, setCourseNameError] = useState(false);
   const [holeCount, setHoleCount] = useState(9);
   const [holes, setHoles] = useState([
-    { number: 1, par: null, handicap: null, yardage: null },
-    { number: 2, par: null, handicap: null, yardage: null },
-    { number: 3, par: null, handicap: null, yardage: null },
-    { number: 4, par: null, handicap: null, yardage: null },
-    { number: 5, par: null, handicap: null, yardage: null },
-    { number: 6, par: null, handicap: null, yardage: null },
-    { number: 7, par: null, handicap: null, yardage: null },
-    { number: 8, par: null, handicap: null, yardage: null },
-    { number: 9, par: null, handicap: null, yardage: null },
+    { number: 1, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 2, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 3, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 4, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 5, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 6, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 7, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 8, par: null, handicap: null, black: null, blue: null, white: null },
+    { number: 9, par: null, handicap: null, black: null, blue: null, white: null },
   ]);
+  
   const handleNameChange = async (event) => {
     const courseName = event.target.value;
     setCourseName(courseName);
@@ -37,14 +38,15 @@ const NewCourse = () => {
     setHoleCount(parseInt(event.target.value));
   };
 
-  const handleYardageChange = (event, holeNumber) => {
+  const handleYardageChange = (event, teeColor, holeNumber) => {
     const newHoles = [...holes];
     const holeIndex = newHoles.findIndex((hole) => hole.number === holeNumber);
     newHoles[holeIndex] = {
       ...newHoles[holeIndex],
-      yardage: parseInt(event.target.value),
+      [teeColor]: parseInt(event.target.value),
     };
     setHoles(newHoles);
+    console.log(holes);
   };
 
   const handleParChange = (event, holeNumber) => {
@@ -70,7 +72,7 @@ const NewCourse = () => {
   const handleSubmit = () => {
     const hasNullValues = holes.some(
       (hole) =>
-        hole.par === null || hole.handicap === null || hole.yardage === null
+        hole.par === null || hole.handicap === null || hole.white === null
     );
 
     if (hasNullValues) {
@@ -107,29 +109,59 @@ const NewCourse = () => {
       )}
       <table>
         <thead>
-          <tr>
-            <th>White</th>
+          <tr className="black">
+            <th>Black</th>
             {holes.map((hole) => (
-              <th key={`yardage-${hole.number}`}>
+              <th key={`black-${hole.number}`}>
                 <input
                   type="number"
                   min="0"
-                  value={hole.yardage}
-                  onChange={(e) => handleYardageChange(e, hole.number)}
+                  value={hole.black}
+                  onChange={(e) => handleYardageChange(e, "black", hole.number)}
                   style={{ width: "50px", textAlign: "center" }}
                 />
               </th>
             ))}
-            <th>{holes.reduce((acc, hole) => acc + hole.yardage, 0)}</th>
+            <th>{holes.reduce((acc, hole) => acc + hole.black, 0)}</th>
           </tr>
-          <tr>
+          <tr className="blue">
+            <th>Blue</th>
+            {holes.map((hole) => (
+              <th key={`blue-${hole.number}`}>
+                <input
+                  type="number"
+                  min="0"
+                  value={hole.blue}
+                  onChange={(e) => handleYardageChange(e, "blue", hole.number)}
+                  style={{ width: "50px", textAlign: "center" }}
+                />
+              </th>
+            ))}
+            <th>{holes.reduce((acc, hole) => acc + hole.blue, 0)}</th>
+          </tr>
+          <tr className="white">
+            <th>White</th>
+            {holes.map((hole) => (
+              <th key={`white-${hole.number}`}>
+                <input
+                  type="number"
+                  min="0"
+                  value={hole.white}
+                  onChange={(e) => handleYardageChange(e, "white", hole.number)}
+                  style={{ width: "50px", textAlign: "center" }}
+                />
+              </th>
+            ))}
+            <th>{holes.reduce((acc, hole) => acc + hole.white, 0)}</th>
+          </tr>
+          <tr className="hole">
             <th>Hole</th>
             {holes.map((hole) => (
               <th key={`number-${hole.number}`}>{hole.number}</th>
             ))}
             <th>Out</th>
           </tr>
-          <tr>
+          <tr className="par">
             <th>Par</th>
             {holes.map((hole) => (
               <th key={`par-${hole.number}`}>
@@ -162,7 +194,7 @@ const NewCourse = () => {
         </thead>
       </table>
       <button className="submit-button" onClick={handleSubmit}>
-        Submit Score
+        Submit Course
       </button>
     </div>
   );

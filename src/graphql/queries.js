@@ -37,7 +37,9 @@ export const getHole = /* GraphQL */ `
       number
       par
       handicap
-      yardage
+      white
+      blue
+      black
       createdAt
       updatedAt
     }
@@ -55,7 +57,9 @@ export const listHoles = /* GraphQL */ `
         number
         par
         handicap
-        yardage
+        white
+        blue
+        black
         createdAt
         updatedAt
       }
