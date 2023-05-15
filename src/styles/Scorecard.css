@@ -219,7 +219,7 @@ body {
     color: #1e7f34;
   }
   
-  .submit-score, .submit-course {
+  .submit-round, .create-course {
     display: flex;
     justify-content: right;
     margin: 20px auto;

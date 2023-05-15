@@ -138,8 +138,8 @@ const Scorecard = () => {
                 handleChange={handleChange}
               />
             </table>
-            <div className="submit-score">
-              <button className="submit-button">Submit Score</button>
+            <div className="submit-round">
+              <button className="submit-button">Submit Round</button>
             </div>
           </form>
         </div>

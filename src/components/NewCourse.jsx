@@ -255,9 +255,9 @@ const NewCourse = () => {
           </tr>
         </thead>
       </table>
-      <div className="submit-course">
+      <div className="create-course">
         <button className="submit-button" onClick={handleSubmit}>
-          Submit Course
+          Create Course
         </button>
       </div>
     </div>
