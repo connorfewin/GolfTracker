@@ -11,7 +11,7 @@ const CourseSelector = ({ courses, selectedCourse, handleCourseChange, handleNew
           </option>
         ))}
       </select>
-      <button className="submit-buttion" onClick={handleNewCourse}>
+      <button className="submit-button" onClick={handleNewCourse}>
         New Course
       </button>
     </div>

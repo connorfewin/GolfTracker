@@ -13,6 +13,8 @@ const Scorecard = () => {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [stats, setStats] = useState([]);
+  const tees = ["Black", "Blue", "White"];
+  const [selectedTee, setSelectedTee] = useState("White");
 
   useEffect(() => {
     const getCoursesAndSetStats = async () => {
@@ -64,6 +66,11 @@ const Scorecard = () => {
     navigate("/new-course");
   }
 
+  const handleTeeChange = (event) => {
+    setSelectedTee(event.target.value);
+    console.log(event.target.value);
+  };
+
   const handleSubmit = () => {};
   return (
     <div>
@@ -77,18 +84,35 @@ const Scorecard = () => {
         <div className="scorecard">
           <h2>{selectedCourse.name}</h2>
           <form>
-            <div className="date-picker">
-              <label htmlFor="date">Date:</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={selectedDate}
-                onChange={(event) => setSelectedDate(event.target.value)}
-              />
+            <div className="form-container">
+              <div className="form-group">
+                <label htmlFor="date">Date:</label>
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={selectedDate}
+                  onChange={(event) => setSelectedDate(event.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="tee-select">Tee:</label>
+                <select
+                  id="tee-select"
+                  value={selectedTee}
+                  onChange={handleTeeChange}
+                >
+                  {tees.map((tee) => (
+                    <option key={tee} value={tee}>
+                      {tee}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
+
             <table>
-              <CourseHeader course={selectedCourse} />
+              <CourseHeader course={selectedCourse} tee={selectedTee} />
               <InputStatsRow
                 type="score"
                 course={selectedCourse}
@@ -114,7 +138,9 @@ const Scorecard = () => {
                 handleChange={handleChange}
               />
             </table>
-            <button className="submit-button">Submit Score</button>
+            <div className="submit-score">
+              <button className="submit-button">Submit Score</button>
+            </div>
           </form>
         </div>
       )}

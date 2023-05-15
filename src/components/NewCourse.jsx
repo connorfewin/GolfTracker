@@ -46,7 +46,6 @@ const NewCourse = () => {
       [teeColor]: parseInt(event.target.value),
     };
     setHoles(newHoles);
-    console.log(holes);
   };
 
   const handleParChange = (event, holeNumber) => {
