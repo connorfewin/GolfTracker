@@ -11,17 +11,80 @@ const NewCourse = () => {
   const [courseNameError, setCourseNameError] = useState(false);
   const [holeCount, setHoleCount] = useState(9);
   const [holes, setHoles] = useState([
-    { number: 1, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 2, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 3, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 4, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 5, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 6, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 7, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 8, par: null, handicap: null, black: null, blue: null, white: null },
-    { number: 9, par: null, handicap: null, black: null, blue: null, white: null },
+    {
+      number: 1,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 2,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 3,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 4,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 5,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 6,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 7,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 8,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
+    {
+      number: 9,
+      par: null,
+      handicap: null,
+      black: null,
+      blue: null,
+      white: null,
+    },
   ]);
-  
+
   const handleNameChange = async (event) => {
     const courseName = event.target.value;
     setCourseName(courseName);
@@ -86,7 +149,7 @@ const NewCourse = () => {
 
   const handleClick = () => {
     navigate(-1);
-  }
+  };
   return (
     <div>
       <h2>Create a New Golf Course</h2>
@@ -94,7 +157,7 @@ const NewCourse = () => {
         <i className="fa fa-arrow-left"></i>
         Go back
       </button>
-      
+
       <NewCourseInfo
         courseName={courseName}
         handleNameChange={handleNameChange}
@@ -192,9 +255,11 @@ const NewCourse = () => {
           </tr>
         </thead>
       </table>
-      <button className="submit-button" onClick={handleSubmit}>
-        Submit Course
-      </button>
+      <div className="submit-course">
+        <button className="submit-button" onClick={handleSubmit}>
+          Submit Course
+        </button>
+      </div>
     </div>
   );
 };

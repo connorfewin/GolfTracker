@@ -59,6 +59,11 @@ body {
   background-color: #998200;
   color: #ffffff;
   }
+
+  .handicap th {
+    background-color: #9982006c;
+    color: #ffffff;
+    }
   
   /* Table Row Styles */
   
@@ -214,8 +219,8 @@ body {
     color: #1e7f34;
   }
   
-  .submit-score {
+  .submit-score, .submit-course {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     margin: 20px auto;
   }
