@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import NewCourseInfo from "./NewCourseInfo";
-import "../styles/NewCourse.css";
+import "../styles/Scorecard.css";
 import "../styles/BackButton.css";
 import { createGolfCourse, fetchAllCourses } from "../api";
 
